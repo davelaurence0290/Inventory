@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="addPartDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Inventory_add_part_Controller">
+   <children>
+      <AnchorPane prefHeight="361.0" prefWidth="385.0">
+         <children>
+            <Label layoutX="24.0" layoutY="14.0" prefHeight="23.0" prefWidth="70.0" text="Add Part">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="addPartInHouse" layoutX="143.0" layoutY="60.0" mnemonicParsing="false" onAction="#setUniqueAttrText" prefHeight="23.0" prefWidth="78.0" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="partType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="addPartOutsourced" layoutX="242.0" layoutY="60.0" mnemonicParsing="false" onAction="#setUniqueAttrText" prefHeight="23.0" prefWidth="92.0" text="Outsourced" toggleGroup="$partType" />
+            <Label focusTraversable="false" layoutX="59.0" layoutY="91.0" prefHeight="23.0" prefWidth="40.0" text="ID" />
+            <Label focusTraversable="false" layoutX="60.0" layoutY="126.0" prefHeight="23.0" prefWidth="40.0" text="Name" />
+            <Label focusTraversable="false" layoutX="60.0" layoutY="159.0" prefHeight="23.0" prefWidth="64.0" text="Inv Qty" />
+            <Label focusTraversable="false" layoutX="60.0" layoutY="229.0" prefHeight="23.0" prefWidth="64.0" text="Price/Cost" />
+            <Label focusTraversable="false" layoutX="61.0" layoutY="195.0" prefHeight="23.0" prefWidth="55.0" text="Max Qty" />
+            <Label fx:id="addPartUniqueLabel" focusTraversable="false" layoutX="59.0" layoutY="264.0" prefHeight="23.0" prefWidth="64.0" text="Machine ID" />
+            <Label focusTraversable="false" layoutX="218.0" layoutY="195.0" prefHeight="23.0" prefWidth="48.0" text="Min Qty" />
+            <TextField fx:id="addPartName" layoutX="147.0" layoutY="125.0" />
+            <TextField fx:id="addPartInvQty" layoutX="147.0" layoutY="158.0" prefHeight="25.0" prefWidth="40.0" />
+            <TextField fx:id="addPartMaxQty" layoutX="147.0" layoutY="194.0" prefHeight="25.0" prefWidth="40.0" />
+            <TextField fx:id="addPartMinQty" layoutX="276.0" layoutY="194.0" prefHeight="25.0" prefWidth="40.0" />
+            <TextField fx:id="addPartPriceCost" layoutX="147.0" layoutY="228.0" prefHeight="25.0" prefWidth="70.0" />
+            <TextField fx:id="addPartUniqueAttr" layoutX="147.0" layoutY="263.0" prefHeight="25.0" prefWidth="70.0" />
+            <Button fx:id="addPartSaveBtn" layoutX="234.0" layoutY="322.0" mnemonicParsing="false" onAction="#addPartSave" text="Save Part" />
+            <Button fx:id="addPartCancelBtn" layoutX="313.0" layoutY="322.0" mnemonicParsing="false" onAction="#addPartCancel" text="Cancel" />
+            <Label focusTraversable="false" layoutX="59.0" layoutY="60.0" prefHeight="23.0" prefWidth="40.0" text="Type:" />
+            <TextField fx:id="addPartID" disable="true" focusTraversable="false" layoutX="147.0" layoutY="90.0" prefHeight="25.0" prefWidth="70.0" promptText="Auto-Gen" />
+            <Label fx:id="addPartWarning" layoutX="14.0" layoutY="310.0" prefHeight="37.0" prefWidth="205.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
